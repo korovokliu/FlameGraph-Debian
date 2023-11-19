@@ -43,7 +43,6 @@ RUN git clone --depth 1 --branch "$BCC_VERSION" https://github.com/iovisor/bcc.g
     && rm -rf /usr/src/bcc
 
 RUN git clone --depth 1 https://github.com/brendangregg/FlameGraph /work/FlameGraph
-
-WORKDIR /work
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 ENTRYPOINT ["/bin/bash"]
